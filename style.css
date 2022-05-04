@@ -3,6 +3,9 @@
     --primary-color: hsl(170,100%, 26%);
     --headline: hsl(210, 11%, 15%);
     --paragraph: hsl(210,9%, 31%);
+
+    --brand-beige: hsl(39, 100%, 97%);
+    --brand-light: hsl(148, 23%, 89%);
 }
 *{
     margin: 0;
@@ -61,23 +64,35 @@ button{
     background-color: var(--primary-color);
     color: white;    
 }
-img{
-    max-width: 263px;
+header img{
+    max-width: 26.3rem;
     width: 100%;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
 }
-.containerCard{
+.stats{
     width: 32.7rem;
     height: 47.0rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #FFFAF1;
+    gap: 6rem;
+    
+    background-color: var(--brand-beige);
+    border: solid 1px --brand-light;
+    border-radius: .6rem;
 }
 h3{
   font-size: 4.8rem;   
+  color: var(--headline);
+  line-height: 130%;
+
+  margin-bottom: .4rem;
 }
-.containerCard p{
-    font-size: 1.6rem;
+.stat p{
     color: var(--primary-color);
+    margin: 0;
+    line-height: 150%;
 }
