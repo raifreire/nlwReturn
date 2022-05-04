@@ -1,77 +1,102 @@
-:root{
+:root {
     font-size: 62.5%;
-    --primary-color: hsl(170,100%, 26%);
+    --primary-color: hsl(170, 100%, 26%);
     --headline: hsl(210, 11%, 15%);
-    --paragraph: hsl(210,9%, 31%);
+    --paragraph: hsl(210, 9%, 31%);
 
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(148, 23%, 89%);
+
+    --nav-heigth: 7.2rem;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     text-align: center;
 }
-header{
+.wrapper{
+    width: 37.5rem;
+    margin-inline: auto;
+}
+
+header::before {
+    content: "";
+    width: 100vw;
+    height: calc(108rem + var(--nav-heigth));
+    background: var(--brand-light);
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 37.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4.1rem;
+    margin-top: calc(4.1rem + var(--nav-heigth)) ;
 
 }
-h4{
+
+header h4 {
     color: var(--primary-color);
     font-size: 1.4rem;
     margin-bottom: 1.6rem;
 }
-h1{
+
+header h1 {
     font-size: 3.4rem;
     color: var(--headline);
     line-height: 130%;
     margin-bottom: 2.4rem;
 }
-p{
+
+header p {
     font-size: 1.8rem;
     line-height: 150%;
     font-weight: 400;
     color: var(--paragraph);
     margin-bottom: 3.2rem;
 }
-button{
+
+header button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.6rem;
-    
+
     border-radius: 4rem;
     border: none;
     margin-bottom: 6rem;
-    
+
     height: 6.2rem;
     width: 26.3rem;
-    
+
     font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
     background-color: var(--primary-color);
-    color: white;    
+    color: white;
 }
-header img{
+
+header img {
     max-width: 26.3rem;
     width: 100%;
     display: block;
     margin-inline: auto;
     object-position: 0 2rem;
 }
-.stats{
+
+.stats {
     width: 32.7rem;
     height: 47.0rem;
     display: flex;
@@ -79,20 +104,47 @@ header img{
     justify-content: center;
     align-items: center;
     gap: 6rem;
-    
+
     background-color: var(--brand-beige);
     border: solid 1px --brand-light;
     border-radius: .6rem;
 }
-h3{
-  font-size: 4.8rem;   
-  color: var(--headline);
-  line-height: 130%;
 
-  margin-bottom: .4rem;
+h3 {
+    font-size: 4.8rem;
+    color: var(--headline);
+    line-height: 130%;
+
+    margin-bottom: .4rem;
 }
-.stat p{
+
+.stat p {
     color: var(--primary-color);
     margin: 0;
     line-height: 150%;
+}
+nav{
+    display: flex;
+
+    height: var(--nav-heigth);
+    
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav.scroll{
+    background: var(--primary-color);
+    width: 100vw;
+}
+nav.scroll svg:nth-child(1) path{
+    fill: white;
+}
+nav.scroll svg:nth-child(2) path{
+    stroke: white;
 }
